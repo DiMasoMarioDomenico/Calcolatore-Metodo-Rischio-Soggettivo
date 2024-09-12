@@ -52,3 +52,4 @@ function calcola() {
          n.6 spin da €2,00 = €${spinMod2.toFixed(2)}<br>
          n.3 spin da €4,00 = €${spinMod3.toFixed(2)}<br>
          n.2 spin da €8,00
+
