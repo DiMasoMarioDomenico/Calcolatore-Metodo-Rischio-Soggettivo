@@ -18,6 +18,14 @@ function calcola() {
     var valoreSpin = importoMax / rischio;  
     var fermati = importoMax * 1.2;
 
+        // Metodo Slot RTP a Puntata Fissa
+    var spinSlot = rischio;
+    var valoreSpinSlot = puntata / spinSlot;
+
+    document.getElementById("spinSlot").innerHTML = "Spin: " + spinSlot.toFixed(2);
+    document.getElementById("valoreSpinSlot").innerHTML = "Valore Spin: €" + valoreSpinSlot.toFixed(2);
+
+
     document.getElementById("importoMax").innerHTML = "Importo Massimo da Investire nelle Slot: €" + importoMax.toFixed(2);
     document.getElementById("spin").innerHTML = "Spin: " + spin.toFixed(2);
     document.getElementById("valoreSpin").innerHTML = "Valore Spin: €" + valoreSpin.toFixed(2);
