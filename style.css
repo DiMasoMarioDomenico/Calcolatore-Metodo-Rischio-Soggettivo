@@ -1,31 +1,73 @@
-function calcola() {
-    var guadagni = parseFloat(document.getElementById("guadagni").value);
-    var rinuncia = parseFloat(document.getElementById("rinuncia").value);
-    var rischio = parseFloat(document.getElementById("rischio").value);
-    var puntata = parseFloat(document.getElementById("puntata").value);
-    var rimborso = parseFloat(document.getElementById("rimborso").value);
+* {
+    box-sizing: border-box;
+}
 
-    if (isNaN(guadagni) || isNaN(rinuncia) || isNaN(rischio) || isNaN(puntata) || isNaN(rimborso)) {
-        alert("Per favore inserisci valori validi.");
-        return;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
 
-    var importoMax = (((guadagni * 0.2) + rinuncia) / 2) / 10;
-    var spin = importoMax;
-    var valoreSpin = 3;  
-    var fermati = importoMax * 1.2;
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
-    document.getElementById("importoMax").innerHTML = "Importo Massimo da Investire nelle Slot: €" + importoMax.toFixed(2);
-    document.getElementById("spin").innerHTML = "Spin: " + spin.toFixed(2);
-    document.getElementById("valoreSpin").innerHTML = "Valore Spin: €" + valoreSpin.toFixed(2);
-    document.getElementById("fermati").innerHTML = "Fermati appena superi: €" + fermati.toFixed(2);
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
 
-    var spinSlot = puntata / rimborso;
-    var valoreSpinSlot = puntata / spinSlot;
+.input-group {
+    margin-bottom: 15px;
+}
 
-    document.getElementById("spinSlot").innerHTML = "Spin: " + spinSlot.toFixed(2);
-    document.getElementById("valoreSpinSlot").innerHTML = "Valore Spin: €" + valoreSpinSlot.toFixed(2);
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
 
-    document.getElementById("result").style.display = "block";
-    document.getElementById("resultSlotRTP").style.display = "block";
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#result, #resultSlotRTP {
+    margin-top: 20px;
+    display: none;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+#result p, #resultSlotRTP p {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
 }
