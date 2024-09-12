@@ -16,10 +16,12 @@ function calcola() {
     var importoMax = (((guadagni * 0.2) + rinuncia) / 2) / 10;
     var spin = rischio;
     var valoreSpin = importoMax / rischio;  
+    var fermati = importoMax * 1.2;
 
     document.getElementById("importoMax").innerHTML = "Importo Massimo da Investire nelle Slot: €" + importoMax.toFixed(2);
     document.getElementById("spin").innerHTML = "Spin: " + spin.toFixed(2);
     document.getElementById("valoreSpin").innerHTML = "Valore Spin: €" + valoreSpin.toFixed(2);
+    document.getElementById("fermati").innerHTML = "Fermati appena superi: €" + fermati.toFixed(2);
 
     // Metodo Slot RTP a Puntata Progressiva
     var spinAgg1 = puntataProgressiva / 20;
