@@ -12,6 +12,7 @@ function calcola() {
         return;
     }
 
+    // Calcolo Rischio Soggettivo
     var importoMax = (((guadagni * 0.2) + rinuncia) / 2) / 10;
     var spin = importoMax;
     var valoreSpin = 3;  
@@ -22,12 +23,14 @@ function calcola() {
     document.getElementById("valoreSpin").innerHTML = "Valore Spin: €" + valoreSpin.toFixed(2);
     document.getElementById("fermati").innerHTML = "Fermati appena superi: €" + fermati.toFixed(2);
 
+    // Metodo Slot RTP a Puntata Fissa
     var spinSlot = puntata / rimborso;
     var valoreSpinSlot = puntata / spinSlot;
 
     document.getElementById("spinSlot").innerHTML = "Spin: " + spinSlot.toFixed(2);
     document.getElementById("valoreSpinSlot").innerHTML = "Valore Spin: €" + valoreSpinSlot.toFixed(2);
 
+    // Metodo Slot RTP a Puntata Progressiva
     var spinAgg1 = puntataProgressiva / 20;
     var spinAgg2 = puntataProgressiva / 10;
     var spinAgg3 = puntataProgressiva / 4;
@@ -51,5 +54,16 @@ function calcola() {
         `n.8 spin da €1,00 = €${spinMod1.toFixed(2)}<br>
          n.6 spin da €2,00 = €${spinMod2.toFixed(2)}<br>
          n.3 spin da €4,00 = €${spinMod3.toFixed(2)}<br>
-         n.2 spin da €8,00
+         n.2 spin da €8,00 = €${spinMod4.toFixed(2)}<br>
+         Totale = €40,00`;
 
+    document.getElementById("spinMoltoModerata").innerHTML = 
+        `n.5 spin da €1,00 = €${spinMM1.toFixed(2)}<br>
+         n.5 spin da €2,00 = €${spinMM2.toFixed(2)}<br>
+         n.5 spin da €5,00 = €${spinMM3.toFixed(2)}<br>
+         Totale = €40,00`;
+
+    document.getElementById("result").style.display = "block";
+    document.getElementById("resultSlotRTP").style.display = "block";
+    document.getElementById("resultSlotRTPProgressiva").style.display = "block";
+}
