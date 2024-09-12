@@ -14,8 +14,8 @@ function calcola() {
 
     // Calcolo Rischio Soggettivo
     var importoMax = (((guadagni * 0.2) + rinuncia) / 2) / 10;
-    var spin = puntata;
-    var valoreSpin = importoMax / puntata;  
+    var spin = rischio;
+    var valoreSpin = importoMax / rischio;  
 
     document.getElementById("importoMax").innerHTML = "Importo Massimo da Investire nelle Slot: €" + importoMax.toFixed(2);
     document.getElementById("spin").innerHTML = "Spin: " + spin.toFixed(2);
