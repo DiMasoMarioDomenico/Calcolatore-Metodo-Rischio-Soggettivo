@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Rischio Soggettivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calcolatore Rischio Soggettivo</h1>
+        <div class="input-group">
+            <label for="guadagni">Guadagni Mensili dal Matched Betting (€):</label>
+            <input type="number" id="guadagni" placeholder="Inserisci i tuoi guadagni mensili">
+        </div>
+        <div class="input-group">
+            <label for="rinuncia">Cifra Mensile da Rinunciare (€):</label>
+            <input type="number" id="rinuncia" placeholder="Cifra che puoi rinunciare">
+        </div>
+        <div class="input-group">
+            <label for="rischio">Livello di Rischio (1-5):</label>
+            <input type="number" id="rischio" placeholder="Inserisci il tuo livello di rischio">
+        </div>
+        <button onclick="calcola()">Calcola</button>
+        
+        <div id="result">
+            <h2>Risultati:</h2>
+            <p id="importoMax">Importo Massimo da Investire nelle Slot: </p>
+            <p id="spin">Spin: </p>
+            <p id="valoreSpin">Valore Spin: </p>
+            <p id="fermati">Fermati appena superi: </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
