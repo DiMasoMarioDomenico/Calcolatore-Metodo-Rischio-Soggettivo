@@ -14,9 +14,8 @@ function calcola() {
 
     // Calcolo Rischio Soggettivo
     var importoMax = (((guadagni * 0.2) + rinuncia) / 2) / 10;
-    var spin = importoMax;
-    var valoreSpin = 3;  
-    var fermati = importoMax * 1.2;
+    var spin = importoMax;  // Assumo che J11 sia l'importoMax calcolato sopra
+    var valoreSpin = importoMax / 3;  // D15/D17, assumo D17 come 3 per i calcoli precedenti
 
     document.getElementById("importoMax").innerHTML = "Importo Massimo da Investire nelle Slot: €" + importoMax.toFixed(2);
     document.getElementById("spin").innerHTML = "Spin: " + spin.toFixed(2);
@@ -44,28 +43,28 @@ function calcola() {
     var spinMM2 = puntataProgressiva / 20;
     var spinMM3 = puntataProgressiva / 8;
 
-    // Calcolo dei totali
-    var totaleAggressiva = (4 * 2) + (3 * 4) + (2 * 10);
+    // Calcolo dei totali per le sequenze di spin
+    var totaleAggressiva = (4 * 2) + (3 * 4) + (2 * 10);  // Assumendo i valori di puntata per i calcoli
     var totaleModerata = (8 * 1) + (6 * 2) + (3 * 4) + (2 * 8);
     var totaleMoltoModerata = (5 * 1) + (5 * 2) + (5 * 5);
 
     document.getElementById("spinAggressiva").innerHTML = 
-        `n.4 spin da = €${spinAgg1.toFixed(2)}<br>
-         n.3 spin da = €${spinAgg2.toFixed(2)}<br>
-         n.2 spin da = €${spinAgg3.toFixed(2)}<br>
+        `n.4 spin da  = €${spinAgg1.toFixed(2)}<br>
+         n.3 spin da  = €${spinAgg2.toFixed(2)}<br>
+         n.2 spin da  = €${spinAgg3.toFixed(2)}<br>
          Totale = €${totaleAggressiva.toFixed(2)}`;
 
     document.getElementById("spinModerata").innerHTML = 
-        `n.8 spin da = €${spinMod1.toFixed(2)}<br>
-         n.6 spin da = €${spinMod2.toFixed(2)}<br>
-         n.3 spin da = €${spinMod3.toFixed(2)}<br>
-         n.2 spin da = €${spinMod4.toFixed(2)}<br>
+        `n.8 spin da  = €${spinMod1.toFixed(2)}<br>
+         n.6 spin da  = €${spinMod2.toFixed(2)}<br>
+         n.3 spin da  = €${spinMod3.toFixed(2)}<br>
+         n.2 spin da  = €${spinMod4.toFixed(2)}<br>
          Totale = €${totaleModerata.toFixed(2)}`;
 
     document.getElementById("spinMoltoModerata").innerHTML = 
-        `n.5 spin da = €${spinMM1.toFixed(2)}<br>
-         n.5 spin da = €${spinMM2.toFixed(2)}<br>
-         n.5 spin da = €${spinMM3.toFixed(2)}<br>
+        `n.5 spin da  = €${spinMM1.toFixed(2)}<br>
+         n.5 spin da  = €${spinMM2.toFixed(2)}<br>
+         n.5 spin da  = €${spinMM3.toFixed(2)}<br>
          Totale = €${totaleMoltoModerata.toFixed(2)}`;
 
     document.getElementById("result").style.display = "block";
